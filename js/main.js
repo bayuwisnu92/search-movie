@@ -32,6 +32,7 @@ function mencari(){
         $("#search-input").val('')
 
       }else {
+        $('#tulis').html('')
         $('#movie-list').html('<h1 class="text-center">' + result.Error + '</h1>')
       }
     }
