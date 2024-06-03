@@ -1,5 +1,6 @@
 function mencari(){
   $('#movie-list').html('')
+  $('#tulis').html('sedang mencari filmnya .....')
   $.ajax({
     url :'https://omdbapi.com',
     type : 'get',
@@ -10,8 +11,10 @@ function mencari(){
     },
     success : function (result){
       if(result.Response == 'True'){
+        $('#search-input').html('tulis titlenya')
         let movies = result.Search;
         $.each(movies,function(i,data){
+          $('#tulis').html('')
             $('#movie-list').append(`
             <div class="col-md-4">
             <div class="card" >
@@ -82,3 +85,5 @@ $('#movie-list').on('click', '.see-detail',function(){
   })
 
 })
+
+
